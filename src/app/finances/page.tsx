@@ -1,7 +1,5 @@
+import FinancesContent from "./financesContent";
+
 export default function Finances() {
-  return (
-    <div>
-      Finances
-    </div>
-  );
+  return <FinancesContent />;
 }
