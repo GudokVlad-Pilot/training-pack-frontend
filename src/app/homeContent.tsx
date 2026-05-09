@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
+import { Button } from "@/components/atoms/button/Button";
 
 export default function HomeContent() {
   const router = useRouter();
@@ -11,7 +12,7 @@ export default function HomeContent() {
   return (
     <div className={styles.page}>
       Hello world!
-      <div onClick={navigateToFinance}>Finances</div>
+      <Button label={"Finances"} onClick={navigateToFinance} />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/atoms/button/Button";
 import { useRouter } from "next/navigation";
 
 export default function FinancesContent() {
@@ -10,7 +11,7 @@ export default function FinancesContent() {
   return (
     <div>
       <div>Finances</div>
-      <div onClick={navigateToHome}>Home</div>
+      <Button label={"Home"} onClick={navigateToHome} />
     </div>
   );
 }
