@@ -1,11 +1,11 @@
 .gudokButtonBox {
-  background-color: midnightblue;
+  background-color: var(--color-background-item);
   border-radius: 12px;
   border: 0;
   cursor: pointer;
 }
 
 .gudokButtonLabel {
-  color: beige;
+  color: var(--color-text-primary);
   padding: 4px;
 }
