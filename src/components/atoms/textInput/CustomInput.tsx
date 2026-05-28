@@ -7,39 +7,25 @@ export interface BaseCustomInputProps {
   placeholder?: string;
 }
 
-// export interface TextCustomInputProps {
-//   type: "text";
-//   /** Input value */
-//   value: string;
-//   /** Value change handler */
-//   onChange: (value: string) => void;
-// }
+interface TextInputProps extends BaseCustomInputProps {
+  /** Input type */
+  type: "text";
+  /** Input value */
+  value: string;
+  /** Value change handler */
+  onChange: (value: string) => void;
+}
 
-// export interface NumberCustomInputProps {
-//   type: "number";
-//   /** Input value */
-//   value: number;
-//   /** Value change handler */
-//   onChange: (value: number) => void;
-// }
+interface NumberInputProps extends BaseCustomInputProps {
+  /** Input type */
+  type: "number";
+  /** Input value */
+  value: number;
+  /** Value change handler */
+  onChange: (value: number) => void;
+}
 
-export type CustomInputProps =
-  | ({
-      /** Input type */
-      type: "text";
-      /** Input value */
-      value: string;
-      /** Value change handler */
-      onChange: (value: string) => void;
-    } & BaseCustomInputProps)
-  | ({
-      /** Input type */
-      type: "number";
-      /** Input value */
-      value: number;
-      /** Value change handler */
-      onChange: (value: number) => void;
-    } & BaseCustomInputProps);
+export type CustomInputProps = TextInputProps | NumberInputProps;
 
 export const CustomInput = ({
   label,

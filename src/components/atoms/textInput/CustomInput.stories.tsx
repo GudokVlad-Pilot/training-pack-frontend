@@ -9,6 +9,23 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  argTypes: {
+    label: {
+      description: "Custom Input label",
+    },
+    placeholder: {
+      description: "Placeholder",
+    },
+    type: {
+      description: "Input type",
+    },
+    value: {
+      description: "Input value",
+    },
+    onChange: {
+      description: "Value change handler",
+    },
+  },
 } satisfies Meta<typeof CustomInput>;
 
 export default meta;
