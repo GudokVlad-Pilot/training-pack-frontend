@@ -37,7 +37,6 @@ export const CustomInput = ({
   return (
     <div className="gudokCustomInputBox">
       <div className="gudokCustomInputLabel">{label}</div>
-
       <input
         className="gudokCustomInputField"
         type={type}

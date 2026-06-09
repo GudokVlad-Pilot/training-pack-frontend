@@ -1,0 +1,15 @@
+.gudokCustomInputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gudokCustomInputLabel {
+  font-size: 24px;
+}
+
+.gudokCustomInputField {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 10px;
+}
