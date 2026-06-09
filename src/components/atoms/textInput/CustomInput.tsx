@@ -20,9 +20,9 @@ interface NumberInputProps extends BaseCustomInputProps {
   /** Input type */
   type: "number";
   /** Input value */
-  value: number;
+  value: number | null;
   /** Value change handler */
-  onChange: (value: number) => void;
+  onChange: (value: number | null) => void;
 }
 
 export type CustomInputProps = TextInputProps | NumberInputProps;
@@ -41,10 +41,10 @@ export const CustomInput = ({
         className="gudokCustomInputField"
         type={type}
         placeholder={placeholder}
-        value={value}
+        value={value ?? ""}
         onChange={(e) => {
           if (type === "number") {
-            onChange(Number(e.target.value));
+            onChange(e.target.value === "" ? null : Number(e.target.value));
           } else {
             onChange(e.target.value);
           }
