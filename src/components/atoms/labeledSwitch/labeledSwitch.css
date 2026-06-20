@@ -1,0 +1,67 @@
+.gudokLabeledSwitchWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.gudokLabeledSwitchBox {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.gudokLabeledSwitchBox input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gudokLabeledSwitchSlider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background-color: #d1d5db;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.gudokLabeledSwitchSlider::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 2px;
+  top: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+/* Checked state */
+.gudokLabeledSwitchBox input:checked + .gudokLabeledSwitchSlider {
+  background-color: #2563eb;
+}
+
+.gudokLabeledSwitchBox input:checked + .gudokLabeledSwitchSlider::before {
+  transform: translateX(20px);
+}
+
+/* Focus state */
+.gudokLabeledSwitchBox input:focus-visible + .gudokLabeledSwitchSlider {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+.gudokLabeledSwitchBox input:disabled + .gudokLabeledSwitchSlider {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.gudokLabeledSliderLabel {
+  font-size: 14px;
+  line-height: 20px;
+  color: #111827;
+}
