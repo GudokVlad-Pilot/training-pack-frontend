@@ -4,6 +4,10 @@ import {
 } from "@/components/atoms/textInput/CustomInput";
 import "./finAccountSettingCard.css";
 import { Button, ButtonProps } from "@/components/atoms/button/Button";
+import {
+  LabeledSwitch,
+  LabeledSwitchProps,
+} from "@/components/atoms/labeledSwitch/LabeledSwitch";
 
 type TextInputProps = Extract<CustomInputProps, { type: "text" }>;
 type NumberInputProps = Extract<CustomInputProps, { type: "number" }>;
@@ -19,6 +23,8 @@ export interface FinAccountSettingCardProps {
   deleteButton: ButtonProps;
   /** Account Save Button*/
   saveButton: ButtonProps;
+  /** Account Activation Switch*/
+  activeSwitch: LabeledSwitchProps;
 }
 
 export const FinAccountSettingCard = ({
@@ -27,6 +33,7 @@ export const FinAccountSettingCard = ({
   sumField,
   deleteButton,
   saveButton,
+  activeSwitch,
 }: FinAccountSettingCardProps) => {
   return (
     <div className="gudokFinAccountSettingCardWrapper">
@@ -40,7 +47,7 @@ export const FinAccountSettingCard = ({
         <CustomInput type="number" {...sumField} />
       </div>
       <div className="gudokFinAccountSettingCardBottomBox">
-        <div>Active</div>
+        <LabeledSwitch {...activeSwitch} />
         <Button {...saveButton} />
       </div>
     </div>

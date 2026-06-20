@@ -38,6 +38,11 @@ const mockData = {
     label: "Delete",
     onClick: () => alert("Deleted"),
   },
+  activeSwitch: {
+    label: "Active",
+    checked: false,
+    labelPosition: "left" as "left" | "right",
+  },
   saveButton: {
     label: "Save",
     onClick: () => alert("Saved"),
@@ -51,9 +56,10 @@ export const Example: Story = {
 export const Interactive: Story = {
   args: mockData,
   render: (args) => {
-    const [name, setName] = useState("");
-    const [holder, setHolder] = useState("");
-    const [sum, setSum] = useState<number | null>(null);
+    const [name, setName] = useState(args.nameField.value);
+    const [holder, setHolder] = useState(args.holderField.value);
+    const [sum, setSum] = useState<number | null>(args.sumField.value);
+    const [active, setActive] = useState(args.activeSwitch.checked);
 
     return (
       <FinAccountSettingCard
@@ -73,6 +79,11 @@ export const Interactive: Story = {
           onChange: setSum,
         }}
         deleteButton={args.deleteButton}
+        activeSwitch={{
+          ...args.activeSwitch,
+          checked: active,
+          onChange: () => setActive((prev) => !prev),
+        }}
         saveButton={args.saveButton}
       />
     );
